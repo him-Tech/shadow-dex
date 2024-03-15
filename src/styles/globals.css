@@ -8,14 +8,25 @@
   --black-200: #616161;
   --black-300: #141922;
   --black-400: #161D26;
+  --black-500: #1C1E28;
+  --black-600: #4D4D52;
   --white: #FFFFFF;
+  --white-100: #F2F2F2;
+  --white-200: #dcdcdc;
+  --white-300: #D9D9D9;
   --gray-100: #818181;
   --gray-200: #848484;
+  --gray-300: #A4A8AB;
+  --gray-400: #969696;
+  --gray-500: #9F9F9F;
+  --gray-600: #636363;
+  --gray-700: #888888;
   --success: #08C077;
   --red: #EF4444;
   --blue: #9199B1;
   --pink: #F63966;
-
+  --yellow: #C19A27;
+  --rs-slider-thumb-hover-shadow: 0 0 0 8px rgba(193, 154, 39, 0.25) !important;
 }
 
 body {
@@ -23,8 +34,224 @@ body {
   background-color: var(--black);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.transition-animation {
+  transition: all 0.4s;
+}
+
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+  box-shadow: none;
+}
+
+/* React Select Dropdown */
+.react-select__control {
+  background-color: var(--black-400) !important;
+  border-color: var(--black-400) !important;
+  border-radius: 12px !important;
+  min-height: 36px !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+.react-select__value-container {
+  padding: 0 10px !important;
+}
+.react-select__value-container:focus-visible {
+  outline: none;
+}
+.react-select__value-container .react-select__single-value {
+  margin: 0 !important;
+}
+.react-select__input-container .react-select__input {
+  box-shadow: none !important;
+}
+.react-select__placeholder {
+  margin: 0 !important;
+  font-size: 11px;
+}
+.react-select__indicators .react-select__indicator-separator {
+  display: none !important;
+}
+.react-select__indicators svg {
+  width: 17px;
+  height: 16px;
+  color: var(--white);
+}
+.react-select__menu {
+  overflow: hidden;
+  min-width: fit-content;
+}
+.react-select__menu .react-select__menu-list {
+  padding: 0 !important;
+}
+.react-select__option {
+  cursor:  pointer !important;
+}
+.react-select__option span {
+  color: var(--black);
+}
+.react-select__option.react-select__option--is-selected, .react-select__option.react-select__option--is-focused.react-select__option--is-selected {
+  background-color: var(--white-200) !important;
+}
+.react-select__option.react-select__option--is-focused {
+  background-color: var(--white) !important;
+}
+/* .react-select__option.react-select__option--is-selected span, .react-select__option.react-select__option--is-focused.react-select__option--is-selected span {
+  color: var(--white);
+} */
+
+.react-select-container-sm .react-select__control {
+  min-height: auto !important;
+  height: 24px;
+  border: 0 !important;
+  background: transparent !important;
+}
+.react-select-container-sm .react-select__single-value {
+  color: var(--yellow);
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 500;
+}
+.react-select-container-sm .react-select__value-container {
+  padding-left: 0 !important;
+  padding-right: 2px !important;
+}
+.react-select-container-sm .react-select__indicators .react-select__dropdown-indicator {
+  padding: 2px;
+}
+.react-select-container-sm .react-select__input-container {
+  height: 20px;
+  margin: 0;
+}
+.react-select-container-sm .react-select__input-container .react-select__input {
+  height: 15px;
+}
+.react-select-container-sm .react-select__option {
+  color: var(--black);
+  font-size: 10px;
+  line-height: 15px;
+  white-space: nowrap;
+}
+/* .react-select-container-sm .react-select__option.react-select__option--is-selected, .react-select-container-sm .react-select__option.react-select__option--is-focused.react-select__option--is-selected {
+  color: var(--white);
+} */
+/* React Select Dropdown */
+
+.main-wrapper {
+  min-height: calc(100vh - 114px);
+}
+
+.rs-slider-bar {
+  height: 1px !important;
+  background-color: var(--white-300);
+}
+.rs-slider-graduator>ol>li:before, .rs-slider-graduator>ol>li:last-child:after {
+  top: -3px !important;
+  width: 7px !important;
+  height: 7px !important;
+  background-color: var(--white-300) !important;
+  border: 1px solid var(--white-300) !important
+}
+.rs-slider-handle:before {
+  top: -5px !important;
+  background: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+}
+.rs-slider-progress-bar {
+  height: 1px !important;
+  background-color: var(--yellow) !important;
+}
+.rs-slider-graduator>ol>li.rs-slider-pass:before {
+  border-color:  var(--yellow) !important;
+}
+.rs-slider-mark-content {
+  font-size: 9px;
+  font-weight: 600;
+}
+.rs-slider-mark {
+  top: 8px !important;
+}
+
+.rs-nav-subtle.rs-nav-horizontal .rs-nav-bar {
+  border: none !important;
+}
+.rs-tabs .rs-nav-item {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: var(--gray-200);
+  padding: 10px;
+}
+.rs-nav-item.rs-nav-item-active {
+  color: var(--success) !important;
+}
+.rs-nav-subtle .rs-nav-item.rs-nav-item-active:before {
+  background-color: var(--success) !important;
+}
+.rs-nav.rs-nav-subtle.rs-nav-horizontal {
+  display: flex;
+  justify-content: space-between;
+}
+.rs-nav-subtle .rs-nav-item:focus, .rs-nav-subtle .rs-nav-item:hover {
+  color: var(--success) !important;
+}
+.rs-nav-subtle.rs-nav-horizontal .rs-nav-item.rs-nav-item-active:before {
+  height: 1px;
+}
+.w-5row.rs-tabs .rs-nav-item {
+  width: calc(100% / 5);
+  align-items: center;
+  justify-content: center;
+}
+.w-2row.rs-tabs .rs-nav-item {
+  width: calc(100% / 2);
+  align-items: center;
+  justify-content: center;
+}
+.rs-input-number .rs-input-group-addon {
+  background: transparent !important;
+  padding: 0 !important;
+  color: var(--gray-700);
+  padding-left: 5px !important;
+  font-size: 11px;
+  font-weight: 500;
+}
+.rs-input-number {
+  background-color: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--gray-600) !important;
+  border-radius: 0 !important;
+  display: flex;
+  align-items: center;
+}
+.rs-input-number input {
+  background-color: transparent !important;
+  padding-left: 0 !important;
+  box-shadow: none;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--white);
+  padding: 0 !important;
+  height: 27px;
+}
+.rs-input-number-btn-group-vertical {
+  background: var(--white) !important;
+  border-radius: 50px !important;
+  flex: 0 0 12px !important;
+  overflow: hidden;
+  height: 20px;
+}
+.rs-input-number-touchspin-down, .rs-input-number-touchspin-up {
+  height: 12px !important;
+}
+.rs-input-number-touchspin-down>.rs-icon, .rs-input-number-touchspin-up>.rs-icon {
+  width: 12px !important;
+  height: 12px !important;
+}
+.rs-input-number-touchspin-down {
+  top: -3px !important;
+}
+.rs-input-group:focus-within, .rs-input-group:not(.rs-input-group-disabled).rs-input-group-focus {
+  outline: none !important;
+}
+.rs-input-number.active .rs-input-group-addon {
+  color: var(--white) !important;
 }
