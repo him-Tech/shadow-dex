@@ -1,13 +1,16 @@
+import { useState } from "react";
+import ReactSelect from "react-select";
+import Link from "next/link";
+import { Tabs } from "rsuite";
+import { AddIcon, ArrowThreeDotsIcon, ExchangeIcon, SettingYellowIcon, SideBarCloseIcon, SideBarOpenIcon, StarIcon } from "@/shared/icon";
 import BuyTab from "@/components/buyTab";
+import SellTab from "@/components/sellTab";
 import FloatingListLeft from "@/components/floatingList";
 import Header from "@/components/header";
+import MarketPrice from "@/components/marketPrice";
 import MarketTraders from "@/components/marketTraders";
+import MaxPositionLeverage from "@/components/maxPositionLeverage";
 import TableTabs from "@/components/tableTabs";
-import { AddIcon, ArrowThreeDotsIcon, ExchangeIcon, SettingYellowIcon, SideBarCloseIcon, SideBarOpenIcon, StarIcon } from "@/shared/icon";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import ReactSelect from "react-select";
-import { Slider, Tabs } from "rsuite";
 
 export default function Home() {
   const[activeMenu, setActiveMenu] = useState(true);
@@ -25,17 +28,6 @@ export default function Home() {
       value: "2"
     }
   ];
-
-  useEffect(() => {
-    fetch('../data.json')
-    .then((res) => res.json())
-    .then((data) => {
-      const dataMarketTraders = data.filter((data) =>{return data.label == 'Market Traders'});
-      if(dataMarketTraders) {
-        setMarketTraders(dataMarketTraders[0].children);
-      }
-    })
-  }, []);
 
   return (
     <>
@@ -71,6 +63,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Index price, Predicted funding rate, Open interest */}
         <div className="py-[13px] px-[25px] pr-[87px] flex items-center">
           <div className="flex items-center mr-[32px]">
             <Link className="mr-[8px]" href={'#'}><StarIcon width={18} height={18} color={'#A4A8AB'} /></Link>
@@ -117,6 +110,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Sub account */}
         <div className="px-[13px]">
           <div className="bg-black_100 p-[12px] rounded-[6px] flex items-center">
             <ul className="flex items-center mx-[-10px]">
@@ -139,17 +133,17 @@ export default function Home() {
                   <Link href={"#"} className="bg-black_500 flex items-center justify-center p-[4px] rounded-[4px] text-center w-[50px] h-[25px]"><AddIcon width={15} height={15} /></Link>
                 </li>
                 <li className="px-[7px]">
-                  <Link href={"#"} className="bg-black_500 flex items-center justify-center p-[4px] rounded-[4px] text-center w-[50px] h-[25px]"><ExchangeIcon width={25} height={25} /></Link>
+                  <Link href={"#"} className="bg-black_500 flex items-center justify-center p-[4px] rounded-[4px] text-center w-[50px] h-[25px]"><ExchangeIcon width={25} height={15} color={"#fff"}/></Link>
                 </li>
                 <li className="px-[7px]">
-                  <Link href={"#"} className="bg-black_500 flex items-center justify-center p-[4px] rounded-[4px] text-center w-[50px] h-[25px]"><ArrowThreeDotsIcon width={25} height={25} /></Link>
+                  <Link href={"#"} className="bg-black_500 flex items-center justify-center p-[4px] rounded-[4px] text-center w-[50px] h-[25px]"><ArrowThreeDotsIcon width={25} height={15} /></Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="px-[13px]">
+        <div className="px-[13px] pb-[15px]">
           <div className="flex flex-wrap mx-[-7px]">
             <div className="w-1/2 px-[7px] mt-[14px]">
               <div className="bg-black_100 rounded-[6px] flex items-center justify-center h-full">
@@ -165,100 +159,21 @@ export default function Home() {
                 </div>
                 <div className="w-1/2 px-[7px] mt-[14px]">
                   <div className="bg-black_100 rounded-[6px] h-full">
-                    <Tabs defaultActiveKey="1" appearance="subtle" className="w-2row">
+                    <Tabs defaultActiveKey="1" appearance="subtle" className="w-2row buy-sell-tabs">
                       <Tabs.Tab eventKey="1" title="Buy BTC-PERP">
                         <BuyTab />
                       </Tabs.Tab>
                       <Tabs.Tab eventKey="2" title="Sell BTC-PERP">
-                        2
+                        <SellTab />
                       </Tabs.Tab>
                     </Tabs>
                   </div>
                 </div>
                 <div className="w-1/2 px-[7px] mt-[14px]">
-                  <MarketTraders marketTradersAPI={marketTraders} />
+                  <MarketTraders />
                 </div>
                 <div className="w-1/2 px-[7px] mt-[14px]">
-                  <div className="bg-black_100 rounded-[6px] h-full py-[18px] px-[14px]">
-                    <div className="flex flex-wrap mx-[-7px]">
-                      <div className="w-3/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-black_600">Total collateral:</p>
-                      </div>
-                      <div className="w-1/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-white text-right">US$3.914.60</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap mx-[-7px]">
-                      <div className="w-3/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-black_600">Free collateral:</p>
-                      </div>
-                      <div className="w-1/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-white text-right">US$1.74</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap mx-[-7px]">
-                      <div className="w-3/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-black_600">Leverage:</p>
-                      </div>
-                      <div className="w-1/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-white text-right">1x</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap mx-[-7px]">
-                      <div className="w-3/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-black_600">Max position Leverage:</p>
-                      </div>
-                      <div className="w-1/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-white text-right">1x</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap mx-[-7px]">
-                      <div className="w-3/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-black_600">Margin fraction:</p>
-                      </div>
-                      <div className="w-1/4 px-[7px] mb-[5px]">
-                        <p className="text-[10px] leading-[15px] text-white text-right">100.04%</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap mx-[-7px]">
-                      <div className="w-3/4 px-[7px]">
-                        <p className="text-[10px] leading-[15px] text-black_600">Maintenance margin requirement:</p>
-                      </div>
-                      <div className="w-1/4 px-[7px]">
-                        <p className="text-[10px] leading-[15px] text-white text-right">3%</p>
-                      </div>
-                    </div>
-                    <div className="border-t border-t-black_600 mt-[10px] pt-[10px]">
-                      <h2 className="text-[12px] leading-[15px] text-white font-semibold mb-[20px]">Max account leverage</h2>
-                      <div className="px-[8px]">
-                        <Slider
-                          defaultValue={1}
-                          step={1}
-                          min={1}
-                          max={6}
-                          graduated
-                          progress
-                          renderMark={mark => {
-                            switch (mark) {
-                              case 1:
-                                return <span>{mark}x</span>;
-                              case 2:
-                                return <span>{mark}x</span>;
-                              case 3:
-                                return <span>{mark}x</span>;
-                              case 4:
-                                return <span>5x</span>;
-                              case 5:
-                                return <span>10x</span>;
-                              case 6:
-                                return <span>20x</span>;
-                            }
-                            return null;
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <MaxPositionLeverage />
                 </div>
               </div>
             </div>
@@ -276,68 +191,17 @@ export default function Home() {
                   <Tabs.Tab eventKey="3" title="Trigger Orders (0)">
                     <TableTabs />
                   </Tabs.Tab>
-                  <Tabs.Tab eventKey="3" title="Order History">
+                  <Tabs.Tab eventKey="4" title="Order History">
                     <TableTabs />
                   </Tabs.Tab>
-                  <Tabs.Tab eventKey="3" title="Trade History">
+                  <Tabs.Tab eventKey="5" title="Trade History">
                     <TableTabs />
                   </Tabs.Tab>
                 </Tabs>
               </div>
             </div>
             <div className="w-1/4 px-[7px] mt-[14px]">
-              <div className="bg-black_100 rounded-[6px] h-full p-[15px]">
-                <div className="border-b border-b-black_600 mb-[10px] pb-[10px]">
-                  <div className="flex flex-wrap mx-[-7px]">
-                    <div className="w-3/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-yellow">Mark Price</p>
-                    </div>
-                    <div className="w-1/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-white text-right">US$3.914.60</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mx-[-7px]">
-                    <div className="w-3/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-black_600">Open Interest</p>
-                    </div>
-                    <div className="w-1/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-white text-right">US$1.74</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mx-[-7px]">
-                    <div className="w-3/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-black_600">24h volume</p>
-                    </div>
-                    <div className="w-1/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-white text-right">1x</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mx-[-7px]">
-                    <div className="w-3/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-black_600">Funding rate</p>
-                    </div>
-                    <div className="w-1/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-white text-right">1x</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mx-[-7px]">
-                    <div className="w-3/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-black_600">Minimum position size:</p>
-                    </div>
-                    <div className="w-1/4 px-[7px] mb-[5px]">
-                      <p className="text-[10px] leading-[15px] text-white text-right">100.04%</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap mx-[-7px]">
-                    <div className="w-3/4 px-[7px]">
-                      <p className="text-[10px] leading-[15px] text-black_600">Maximum position size</p>
-                    </div>
-                    <div className="w-1/4 px-[7px]">
-                      <p className="text-[10px] leading-[15px] text-white text-right">3%</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             <MarketPrice />
             </div>
           </div>
         </div>

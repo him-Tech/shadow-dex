@@ -1,4 +1,7 @@
+import { MarketTraderTableList } from "@/shared/Helper";
+
 export default function TableTabs() {
+  const tableTabsAPI = MarketTraderTableList;
   return (
     <table table class="table-auto border-collapse w-full">
       <thead>
@@ -16,48 +19,24 @@ export default function TableTabs() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">ENS-PERP</td>
-          <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">Long</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">59.67ENS</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">US$3.912.84</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">1.938</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">65.620</td>
-          <td className="text-[10px] text-red leading-[12px] font-normal px-[8px] py-[4px] text-right">-US$213.92</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">69.160</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">69.160</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">
-            <p className="rounded-[2px] bg-[#3A1621] py-[6px] px-[11px] text-red text-[10px] leading-[10px] font-medium inline-block">MARKET CLOSE</p>
-          </td>
-        </tr>
-        <tr>
-          <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">ENS-PERP</td>
-          <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">Long</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">59.67ENS</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">US$3.912.84</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">1.938</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">65.620</td>
-          <td className="text-[10px] text-red leading-[12px] font-normal px-[8px] py-[4px] text-right">-US$213.92</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">69.160</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">69.160</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">
-            <p className="rounded-[2px] bg-[#3A1621] py-[6px] px-[11px] text-red text-[10px] leading-[10px] font-medium inline-block">MARKET CLOSE</p>
-          </td>
-        </tr>
-        <tr>
-          <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">ENS-PERP</td>
-          <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">Long</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">59.67ENS</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">US$3.912.84</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">1.938</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">65.620</td>
-          <td className="text-[10px] text-red leading-[12px] font-normal px-[8px] py-[4px] text-right">-US$213.92</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">69.160</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">69.160</td>
-          <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">
-            <p className="rounded-[2px] bg-[#3A1621] py-[6px] px-[11px] text-red text-[10px] leading-[10px] font-medium inline-block">MARKET CLOSE</p>
-          </td>
-        </tr>
+        {
+          tableTabsAPI.map((tableTabs, index) => (
+            <tr key={index}>
+              <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">{tableTabs.Market}</td>
+              <td className="text-[10px] text-success leading-[12px] font-normal px-[8px] py-[4px]">{tableTabs.Side}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.PositionSize}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.NotionalSize}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.EstLiquidationPrice}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.MarkPrice}</td>
+              <td className="text-[10px] text-pink leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.MarkPriceRed}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.AvgOpenPrice}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.BreakEvenPrice}</td>
+              <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">
+                <p className="rounded-[2px] bg-[#3A1621] py-[6px] px-[11px] text-[#883448] text-[10px] leading-[10px] font-medium inline-block">{tableTabs.Status}</p>
+              </td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   )

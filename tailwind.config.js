@@ -4,7 +4,6 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
     extend: {
@@ -24,9 +23,11 @@ module.exports = {
         gray_300: '#A4A8AB',
         gray_400: '#969696',
         gray_500: "#9F9F9F",
+        gray_600: "#4E4F54",
         success: "#08C077",
         red: "#EF4444",
         blue: "#9199B1",
+        blue_100: '#2E323D',
         pink: "#F63966",
         yellow: '#C19A27'
       },
@@ -36,6 +37,5 @@ module.exports = {
     },
   },
   plugins: [
-    require('flowbite/plugin'),
   ],
 };

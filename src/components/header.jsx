@@ -13,8 +13,8 @@ export default function Header() {
       value: "1"
     },
     {
-      label: "Indonesia",
-      image: "https://cdn.britannica.com/48/1648-050-9C1F365D/Flag-Indonesia.jpg",
+      label: "Australia",
+      image: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg",
       value: "2"
     }
   ];
@@ -59,7 +59,9 @@ export default function Header() {
                 options={LanguageOption} 
                 formatOptionLabel={LanguageOption => (
                   <div className="flex items-center">
-                    <img src={LanguageOption.image} alt={LanguageOption.label} className="w-[15px] h-[15px] mr-[5px] rounded-[30px]" />
+                    <div className="w-[15px] h-[15px] rounded-[30px] overflow-hidden mr-[5px]">
+                      <img src={LanguageOption.image} alt={LanguageOption.label} className="w-full h-full object-cover" />
+                    </div>
                     <span className="text-[11px] leading-[15px] text-white">{LanguageOption.label}</span>
                   </div>
                 )} 

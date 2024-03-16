@@ -2,7 +2,7 @@ import { ExchangeIcon } from "@/shared/icon";
 import { useState } from "react";
 import { Button, Form, InputNumber, SelectPicker, Slider, Toggle } from "rsuite";
 
-export default function BuyTab() {
+export default function SellTab() {
   const options = [
     {
       name: 'Limit order',
@@ -75,7 +75,7 @@ export default function BuyTab() {
           className="rs-slider-progress-custom pl-[12px]"
         />
       </div>
-      <p className="text-[10px] leading-[12px] text-gray_600">0.00x Account Leverage</p>
+      <p className="text-[10px] leading-[12px] text-gray_600">3.71x account Leverage and Estimated Liquidation Price: 66.726</p>
       <ul className="flex mx-[-6px]">
         <li className="px-[6px] mt-[10px]">         
           <div className="flex items-center">
@@ -83,27 +83,15 @@ export default function BuyTab() {
             <p className="text-[10px] leading-[15px] text-white ml-[5px]">Reduce Only</p>
           </div>
         </li>
-        <li className="px-[6px] mt-[10px]">
-          <div className="flex items-center">
-            <Toggle checked={checked1} onChange={setChecked1} className="toggle-custom"/>
-            <p className="text-[10px] leading-[15px] text-white ml-[5px]">POST</p>
-          </div>
-        </li>
-        <li className="px-[6px] mt-[10px]">
-          <div className="flex items-center">
-            <Toggle checked={checked2} onChange={setChecked2} className="toggle-custom"/>
-            <p className="text-[10px] leading-[15px] text-white ml-[5px]">IOC</p>
-          </div>
-        </li>
       </ul>
       <div className="flex mx-[-6px]">
-        <div className="px-[6px] mt-[10px] flex-grow">
-          <Button className={`rs-btn-custom w-full ${disabled && 'disabled'}`} color="green" appearance="primary">Buy</Button>
-        </div>
         <div className="px-[6px] mt-[10px] w-[80px]">
-          <Button color="red" appearance="primary" className="rs-btn-custom w-full">
+          <Button color="green" appearance="primary" className="rs-btn-custom w-full">
             <ExchangeIcon width={26} height={20} color={'#000000'} />
           </Button>
+        </div>
+        <div className="px-[6px] mt-[10px] flex-grow">
+          <Button className={`rs-btn-custom w-full`} color="red" appearance="primary">Sell</Button>
         </div>
       </div>
     </div>

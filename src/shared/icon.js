@@ -104,8 +104,8 @@ export const AddIcon = (props) => {
 export const ExchangeIcon = (props) => {
   return(
     <svg width={props.width} height={props.height} viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.91958 1.13209L3.32281 0.5L0.5 3.50002L3.32281 6.5L3.91958 5.86791L2.11241 3.94732H7.5V3.05268H2.11241L3.91958 1.13209Z" fill="white"/>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0804 8.86791L11.6772 9.5L14.5 6.49998L11.6772 3.5L11.0804 4.13209L12.8876 6.05268L7.5 6.05268L7.5 6.94732L12.8876 6.94732L11.0804 8.86791Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.91958 1.13209L3.32281 0.5L0.5 3.50002L3.32281 6.5L3.91958 5.86791L2.11241 3.94732H7.5V3.05268H2.11241L3.91958 1.13209Z" fill={props.color}/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0804 8.86791L11.6772 9.5L14.5 6.49998L11.6772 3.5L11.0804 4.13209L12.8876 6.05268L7.5 6.05268L7.5 6.94732L12.8876 6.94732L11.0804 8.86791Z" fill={props.color}/>
     </svg>
 
   )
