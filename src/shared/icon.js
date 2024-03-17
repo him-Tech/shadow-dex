@@ -34,11 +34,11 @@ export const BarIcon = () => {
   )
 }
 
-export const SearchIcon = () => {
+export const SearchIcon = (props) => {
   return (
-    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6.10473 10.9659C8.73242 10.9659 10.8626 8.83576 10.8626 6.20806C10.8626 3.58036 8.73242 1.4502 6.10473 1.4502C3.47703 1.4502 1.34686 3.58036 1.34686 6.20806C1.34686 8.83576 3.47703 10.9659 6.10473 10.9659Z" stroke="#0A090B" stroke-width="0.90149" stroke-linecap="round" stroke-linejoin="round"/>
-      <path opacity="0.4" d="M11.3634 11.4667L10.3618 10.4651" stroke="#0A090B" stroke-width="0.90149" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width={props.width} height={props.height} viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.10473 10.9659C8.73242 10.9659 10.8626 8.83576 10.8626 6.20806C10.8626 3.58036 8.73242 1.4502 6.10473 1.4502C3.47703 1.4502 1.34686 3.58036 1.34686 6.20806C1.34686 8.83576 3.47703 10.9659 6.10473 10.9659Z" stroke={props.color} strokeWidth="0.90149" strokeLinecap="round" strokeLinejoin="round"/>
+      <path opacity="0.4" d="M11.3634 11.4667L10.3618 10.4651" stroke={props.color} strokeWidth="0.90149" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
 }
@@ -46,8 +46,8 @@ export const SearchIcon = () => {
 export const SearchWhiteIcon = () => {
   return (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6.73965 11.4975C9.36734 11.4975 11.4975 9.36731 11.4975 6.73961C11.4975 4.11192 9.36734 1.98175 6.73965 1.98175C4.11195 1.98175 1.98178 4.11192 1.98178 6.73961C1.98178 9.36731 4.11195 11.4975 6.73965 11.4975Z" stroke="white" stroke-width="0.90149" stroke-linecap="round" stroke-linejoin="round"/>
-      <path opacity="0.4" d="M11.9983 11.9983L10.9967 10.9966" stroke="white" stroke-width="0.90149" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6.73965 11.4975C9.36734 11.4975 11.4975 9.36731 11.4975 6.73961C11.4975 4.11192 9.36734 1.98175 6.73965 1.98175C4.11195 1.98175 1.98178 4.11192 1.98178 6.73961C1.98178 9.36731 4.11195 11.4975 6.73965 11.4975Z" stroke="white" strokeWidth="0.90149" strokeLinecap="round" strokeLinejoin="round"/>
+      <path opacity="0.4" d="M11.9983 11.9983L10.9967 10.9966" stroke="white" strokeWidth="0.90149" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
 }
@@ -58,7 +58,7 @@ export const SideBarCloseIcon = () => {
       <rect width="10" height="2" rx="0.5" fill="white"/>
       <rect y="4" width="7" height="2" rx="0.5" fill="white"/>
       <rect y="8" width="10" height="2" rx="0.5" fill="white"/>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0305 9.01579L8.41632 5.4016C8.19453 5.17981 8.19453 4.82023 8.41632 4.59845L12.0305 0.984255C12.2523 0.76247 12.6119 0.76247 12.8337 0.984255C13.0554 1.20604 13.0554 1.56562 12.8337 1.78741L9.62105 5.00002L12.8337 8.21264C13.0554 8.43442 13.0554 8.79401 12.8337 9.01579C12.6119 9.23758 12.2523 9.23758 12.0305 9.01579Z" fill="white"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M12.0305 9.01579L8.41632 5.4016C8.19453 5.17981 8.19453 4.82023 8.41632 4.59845L12.0305 0.984255C12.2523 0.76247 12.6119 0.76247 12.8337 0.984255C13.0554 1.20604 13.0554 1.56562 12.8337 1.78741L9.62105 5.00002L12.8337 8.21264C13.0554 8.43442 13.0554 8.79401 12.8337 9.01579C12.6119 9.23758 12.2523 9.23758 12.0305 9.01579Z" fill="white"/>
     </svg>
   )
 }
@@ -69,7 +69,7 @@ export const SideBarOpenIcon = () => {
       <rect width="10" height="2" rx="0.5" transform="matrix(-1 0 0 1 13 0)" fill="white"/>
       <rect width="7" height="2" rx="0.5" transform="matrix(-1 0 0 1 13 4)" fill="white"/>
       <rect width="10" height="2" rx="0.5" transform="matrix(-1 0 0 1 13 8)" fill="white"/>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M0.969492 9.01579L4.58368 5.4016C4.80547 5.17981 4.80547 4.82023 4.58368 4.59845L0.969492 0.984255C0.747707 0.76247 0.388124 0.76247 0.166339 0.984255C-0.0554462 1.20604 -0.0554462 1.56562 0.166339 1.78741L3.37895 5.00002L0.166339 8.21264C-0.0554462 8.43442 -0.0554462 8.79401 0.166339 9.01579C0.388124 9.23758 0.747707 9.23758 0.969492 9.01579Z" fill="white"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M0.969492 9.01579L4.58368 5.4016C4.80547 5.17981 4.80547 4.82023 4.58368 4.59845L0.969492 0.984255C0.747707 0.76247 0.388124 0.76247 0.166339 0.984255C-0.0554462 1.20604 -0.0554462 1.56562 0.166339 1.78741L3.37895 5.00002L0.166339 8.21264C-0.0554462 8.43442 -0.0554462 8.79401 0.166339 9.01579C0.388124 9.23758 0.747707 9.23758 0.969492 9.01579Z" fill="white"/>
     </svg>
   )
 }
@@ -94,8 +94,8 @@ export const SettingYellowIcon = () => {
 export const AddIcon = (props) => {
   return (
     <svg width={props.width} height={props.height} viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10.5 6L0.5 6" stroke="white" stroke-linecap="round"/>
-      <path d="M5.5 11L5.5 1" stroke="white" stroke-linecap="round"/>
+      <path d="M10.5 6L0.5 6" stroke="white" strokeLinecap="round"/>
+      <path d="M5.5 11L5.5 1" stroke="white" strokeLinecap="round"/>
     </svg>
 
   )
@@ -104,8 +104,8 @@ export const AddIcon = (props) => {
 export const ExchangeIcon = (props) => {
   return(
     <svg width={props.width} height={props.height} viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.91958 1.13209L3.32281 0.5L0.5 3.50002L3.32281 6.5L3.91958 5.86791L2.11241 3.94732H7.5V3.05268H2.11241L3.91958 1.13209Z" fill={props.color}/>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0804 8.86791L11.6772 9.5L14.5 6.49998L11.6772 3.5L11.0804 4.13209L12.8876 6.05268L7.5 6.05268L7.5 6.94732L12.8876 6.94732L11.0804 8.86791Z" fill={props.color}/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M3.91958 1.13209L3.32281 0.5L0.5 3.50002L3.32281 6.5L3.91958 5.86791L2.11241 3.94732H7.5V3.05268H2.11241L3.91958 1.13209Z" fill={props.color}/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M11.0804 8.86791L11.6772 9.5L14.5 6.49998L11.6772 3.5L11.0804 4.13209L12.8876 6.05268L7.5 6.05268L7.5 6.94732L12.8876 6.94732L11.0804 8.86791Z" fill={props.color}/>
     </svg>
 
   )
@@ -114,10 +114,10 @@ export const ExchangeIcon = (props) => {
 export const ArrowThreeDotsIcon = (props) => {
   return(
     <svg width={props.width} height={props.height} viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29458 1.24269L3.69781 0.610596L0.875 3.61062L3.69781 6.6106L4.29458 5.97851L2.48741 4.05792H12V3.16327H2.48741L4.29458 1.24269Z" fill="white"/>
-      <circle cx="6.15385" cy="6.61057" r="0.678846" stroke="white" stroke-width="0.2"/>
-      <circle cx="8.75004" cy="6.61057" r="0.678846" stroke="white" stroke-width="0.2"/>
-      <circle cx="11.3462" cy="6.61057" r="0.678846" stroke="white" stroke-width="0.2"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M4.29458 1.24269L3.69781 0.610596L0.875 3.61062L3.69781 6.6106L4.29458 5.97851L2.48741 4.05792H12V3.16327H2.48741L4.29458 1.24269Z" fill="white"/>
+      <circle cx="6.15385" cy="6.61057" r="0.678846" stroke="white" strokeWidth="0.2"/>
+      <circle cx="8.75004" cy="6.61057" r="0.678846" stroke="white" strokeWidth="0.2"/>
+      <circle cx="11.3462" cy="6.61057" r="0.678846" stroke="white" strokeWidth="0.2"/>
     </svg>
   )
 }

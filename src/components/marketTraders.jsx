@@ -6,7 +6,7 @@ export default function MarketTraders() {
     <div className="bg-black_100 rounded-[6px] h-full">
       <p className="text-[10px] leading-[15px] text-center font-semibold text-white p-[10px] w-full">Market Trades</p>
       <div className="mt-[5px]">
-        <table table class="table-auto border-collapse w-full">
+        <table table className="table-auto border-collapse w-full">
           <thead>
             <tr>
               <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap">Price (USD)</th>

@@ -29,7 +29,7 @@ export default function BuyTab() {
       <div className="flex flex-wrap mx-[-7px]">
         <div className="w-3/5 px-[7px]">
           <p className="text-[10px] leading-[12px] text-[#888888]">Price</p>
-          <InputNumber postfix="RMB" />
+          <InputNumber postfix="RMB" value={'64802'}  className="active"/>
         </div>
         <div className="w-2/5 px-[7px]">
           <p className="text-[10px] leading-[12px] text-[#888888]">Order type</p>
