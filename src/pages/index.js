@@ -33,13 +33,14 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    setIsWidth(window.innerWidth);
     const handleResize = () => {
       if (window.innerWidth < 1280) {
         setIsFloatingList(false);
+        setIsWidth(window.innerWidth);
         document.addEventListener('click', handleClickOutside, true);
       } else {
-        setIsFloatingList(true); // or whatever your default behavior is
+        setIsFloatingList(true); 
+        setIsWidth(window.innerWidth);
         document.removeEventListener('click', handleClickOutside, true);
       }
     };
