@@ -57,7 +57,7 @@ body {
   cursor: pointer !important;
 }
 .react-select__value-container {
-  padding: 0 10px !important;
+  padding: 0 0 0 10px !important;
 }
 .react-select__value-container:focus-visible {
   outline: none;

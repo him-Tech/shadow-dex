@@ -46,10 +46,15 @@ export default function Header() {
   return (
     <header className="md:py-[15px] py-[8px] items-center fixed left-0 top-0 w-full bg-black z-20">
       <div className="md:hidden block border-b-[1px] border-b-[rgba(255,255,255,0.3)] pb-[5px] mb-[5px] px-[15px]">
-        <ul className="flex mx-[-3px] justify-end">
+        <ul className="flex mx-[-3px] justify-end items-center">
+          <li className="px-[3px] mr-auto">
+            <div className="xl:w-[326px] w-[90px]">
+              <Image src={LogoImg} alt="Logo" className="xl:w-[100px] h-full w-full object-contain mx-auto"/>
+            </div>
+          </li>
           <li className="px-[3px]">
             <Select 
-              className="react-select-container h-[36px] w-full focus-visible:outline-none"
+              className="react-select-container h-[36px] w-[110px] focus-visible:outline-none"
               classNamePrefix="react-select"
               options={LanguageOption} 
               id="language-select"
@@ -59,7 +64,7 @@ export default function Header() {
                   <div className="w-[15px] h-[15px] rounded-[30px] overflow-hidden mr-[5px]">
                     <img src={LanguageOption.image} alt={LanguageOption.label} className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-[11px] leading-[15px] text-white">{LanguageOption.label}</span>
+                  <span className="text-[11px] leading-[15px] text-white w-[calc(100%_-_15px)] truncate">{LanguageOption.label}</span>
                 </div>
               )} 
               defaultValue={LanguageOption[0]} />
@@ -78,10 +83,10 @@ export default function Header() {
         </ul>
       </div>
       <div className="flex">
-        <div className="xl:w-[326px] px-[15px] w-[130px]">
+        <div className="xl:w-[326px] px-[15px] w-[130px] hidden md:block">
           <Image src={LogoImg} alt="Logo" className="xl:w-[100px] h-full w-full object-contain mx-auto"/>
         </div>
-        <div className="flex items-center xl:w-[calc(100%_-_326px)] w-[calc(100%_-_130px)]">
+        <div className="flex items-center xl:w-[calc(100%_-_326px)] md:w-[calc(100%_-_130px)] w-full md:pl-[0] pl-[15px]">
           <div className="mr-auto">
             <div className="flex items-center">
               <div className="pr-[15px] hidden xl:block"><Link href={'#'}><BarIcon /></Link></div>
@@ -96,13 +101,16 @@ export default function Header() {
               </div>
               { isSearch && <div className="overlayMenu fixed bottom-0 top-[0] left-0 w-full h-full z-20"></div> } 
               <div className={`md:relative md:w-[200px] 2xl:ml-[70px] z-[21] md:ml-[15px] fixed w-full md:left-[0] top-[-100%] left-[0] transition-animation ${isSearch && 'top-[0]'}`} ref={SearchRef}>
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <div className="pointer-events-none absolute inset-y-0 left-0 items-center pl-3 md:flex hidden">
                   <SearchIcon width={13} height={13} color={'#000000'} />
+                </div>
+                <div className="pointer-events-none absolute inset-y-0 left-0 items-center pl-3 md:hidden flex">
+                  <SearchIcon width={13} height={13} color={'#FFFFFF'} />
                 </div>
                 <input
                   type="text"
                   name="Search"
-                  className="block w-full md:h-[27px] h-[50px] md:rounded-md border-white_100 bg-white_100 pr-[10px] pl-[30px] text-[10px] leading-[13px] placeholder:text-[10px] placeholder:leading-[13px] focus:border-white_100 focus-visible:outline-none text-black placeholder:text-gray_100"
+                  className="block w-full md:h-[27px] h-[50px] md:rounded-md md:border-white_100 md:bg-white_100 bg-black_400 border-black_400 pr-[10px] pl-[30px] text-[10px] leading-[13px] placeholder:text-[10px] placeholder:leading-[13px] focus:border-white_100 focus-visible:outline-none md:text-black text-white placeholder:text-gray_100"
                   placeholder="Search market"
                 />
               </div>

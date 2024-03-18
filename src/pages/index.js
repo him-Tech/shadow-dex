@@ -34,10 +34,29 @@ export default function Home() {
 
   useEffect(() => {
     setIsWidth(window.innerWidth);
-    if(isWidth < 1280) {
-      setIsFloatingList(false);
-      document.addEventListener('click', handleClickOutside, true);
-    }
+    const handleResize = () => {
+      if (window.innerWidth < 1280) {
+        setIsFloatingList(false);
+        document.addEventListener('click', handleClickOutside, true);
+      } else {
+        setIsFloatingList(true); // or whatever your default behavior is
+        document.removeEventListener('click', handleClickOutside, true);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+    // window.addEventListener('resize', () => {
+    //   if(isWidth < 1280) {
+    //     setIsFloatingList(false);
+    //     console.log(window.innerWidth)
+    //     document.addEventListener('click', handleClickOutside, true);
+    //   }
+    // })
+    
   }, []);
 
   const handleClickOutside = (event) => {
@@ -51,13 +70,13 @@ export default function Home() {
       <Header />
       <section className={`main-wrapper relative transition-animation md:pt-[67px] pt-[99px] ${isFloatingList && 'xl:pl-[315px]'}`}>
 
-        { isWidth < 1280 && isFloatingList && <div className="overlayMenu fixed bottom-0 md:top-[67px] top-[99px] left-0 w-full h-full z-[9]"></div> } 
+        { isWidth < 1280 && (isFloatingList && <div className="overlayMenu fixed bottom-0 md:top-[67px] top-[99px] left-0 w-full h-full z-[9]" ></div>) } 
         <div className={`w-[315px] bg-black xl:absolute fixed md:top-[67px] top-[99px] xl:h-[calc(100%_-_67px)] h-[calc(100vh_-_67px)] z-10 transition-animation ${isFloatingList ? 'left-0': 'left-[-100%]'}`} ref={ref} onClick={handleClickOutside}>
           <FloatingListLeft />
         </div>
 
-        <div className="bg-black_400 flex items-center">
-          <div className="p-[12px] mr-[14px] flex items-center justify-center" >
+        <div className="bg-black_400 flex items-center md:pr-[0] pr-[15px] ">
+          <div className="p-[15px] md:mr-[14px] flex items-center justify-center" >
             <Link href={"#"} className="flex" onClick={() => {setIsFloatingList(!isFloatingList)}}>
               {isFloatingList ? <SideBarCloseIcon /> : <SideBarOpenIcon />}
             </Link>
@@ -89,8 +108,8 @@ export default function Home() {
         </div>
 
         {/* Index price, Predicted funding rate, Open interest */}
-        <div className="py-[13px] 2xl:px-[25px] 2xl:pr-[87px] px-[15px] flex items-center">
-          <div className="flex items-center mr-[32px] xl:w-[227px] w-[167px]">
+        <div className="py-[13px] 2xl:px-[25px] 2xl:pr-[87px] px-[15px] flex items-center md:flex-nowrap flex-wrap relative">
+          <div className="flex items-center md:mr-[32px] xl:w-[227px] md:w-[167px] w-[calc(100%_-_100px)]">
             <Link className="mr-[8px]" href={'#'}><StarIcon width={18} height={18} color={'#A4A8AB'} /></Link>
             <ReactSelect
               className="react-select-container react-select-container-sm h-[27px] focus-visible:outline-none"
@@ -106,8 +125,8 @@ export default function Home() {
               )} 
               defaultValue={LanguageOption[0]} />
           </div>
-          <div className="flex items-center xl:w-[calc(100%_-_227px)] w-[calc(100%_-_167px)]">
-            <ul className="flex items-center mx-[-15px] w-[calc(100%_-_63px)] overflow-x-auto overflow-y-hidden">
+          <div className="flex items-center xl:w-[calc(100%_-_227px)] md:w-[calc(100%_-_167px)] overflow-hidden">
+            <ul className="flex items-center mx-[-15px] md:w-[calc(100%_-_63px)] overflow-x-auto overflow-y-hidden">
               <li className="px-[15px]">
                 <p className="whitespace-nowrap flex items-center text-[16px] leading-[24px] font-semibold text-white">64,896 <span className="inline-block text-[10px] leading-[15px] font-medium text-yellow ml-[7px]">+0.11%</span></p>
               </li>
@@ -128,7 +147,7 @@ export default function Home() {
                 <p className="whitespace-nowrap flex items-center text-[12px] leading-[14px] font-semibold text-white">US$7,582,701.351</p>
               </li>
             </ul>
-            <div className="ml-auto w-[63px] text-right">
+            <div className="ml-auto w-[63px] text-right md:static absolute top-[16px] right-[15px]">
               <Link className="flex items-center" href={"#"}>
                 <p className="inline-block text-[10px] leading-[15px] text-white mr-[8px] ">Setting</p>
                 <SettingYellowIcon />
@@ -154,7 +173,7 @@ export default function Home() {
                 <p className=" text-[10px] leading-[15px] text-success">FuturesTrading</p>
               </li>
             </ul>
-            <div className="md:ml-[28px] md:mt-[0] mt-[10px]">
+            <div className="md:ml-[28px] md:mt-[0] mt-[10px] w-full md:w-auto">
               <ul className="flex items-center flex-wrap  mx-[-7px]">
                 <li className="px-[7px]">
                   <Link href={"#"} className="bg-black_500 flex items-center justify-center p-[4px] rounded-[4px] text-center w-[50px] h-[25px]"><AddIcon width={15} height={15} /></Link>
