@@ -14,10 +14,8 @@ import TableTabs from "@/components/tableTabs";
 
 export default function Home() {
   const [isWidth, setIsWidth] = useState();
-  const [isFloatingList, setIsFloatingList] = useState(true);
+  const [isFloatingList, setIsFloatingList] = useState(false);
   const ref = useRef(null);
-  // const SideBarIconRef = useRef(null);
-  
 
   const LanguageOption = [
     {
@@ -33,13 +31,19 @@ export default function Home() {
   ];
 
   useEffect(() => {
+    if (window.innerWidth >= 1280) {
+      setIsFloatingList(true);
+    }
+  }, [])
+
+  useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1280) {
+      if ( window.innerWidth < 1280) {
         setIsFloatingList(false);
         setIsWidth(window.innerWidth);
         document.addEventListener('click', handleClickOutside, true);
       } else {
-        setIsFloatingList(true); 
+           
         setIsWidth(window.innerWidth);
         document.removeEventListener('click', handleClickOutside, true);
       }
@@ -50,14 +54,6 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('click', handleClickOutside, true);
     };
-    // window.addEventListener('resize', () => {
-    //   if(isWidth < 1280) {
-    //     setIsFloatingList(false);
-    //     console.log(window.innerWidth)
-    //     document.addEventListener('click', handleClickOutside, true);
-    //   }
-    // })
-    
   }, []);
 
   const handleClickOutside = (event) => {
@@ -67,6 +63,7 @@ export default function Home() {
   };
 
   return (
+    
     <>
       <Header />
       <section className={`main-wrapper relative transition-animation md:pt-[67px] pt-[99px] ${isFloatingList && 'xl:pl-[315px]'}`}>
