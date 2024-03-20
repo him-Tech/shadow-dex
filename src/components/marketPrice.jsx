@@ -12,7 +12,7 @@ export default function MarketPrice() {
         </div>
         <div className="flex flex-wrap mx-[-7px]">
           <div className="w-3/4 px-[7px] mb-[5px]">
-            <p className="text-[10px] leading-[15px] text-black_600">Open Interest</p>
+            <p className="text-[12px] leading-[16px] text-black_600">Open Interest</p>
           </div>
           <div className="w-1/4 px-[7px] mb-[5px]">
             <p className="text-[10px] leading-[15px] text-white text-right">US$1.74</p>
@@ -20,7 +20,7 @@ export default function MarketPrice() {
         </div>
         <div className="flex flex-wrap mx-[-7px]">
           <div className="w-3/4 px-[7px] mb-[5px]">
-            <p className="text-[10px] leading-[15px] text-black_600">24h volume</p>
+            <p className="text-[12px] leading-[16px] text-black_600">24h volume</p>
           </div>
           <div className="w-1/4 px-[7px] mb-[5px]">
             <p className="text-[10px] leading-[15px] text-white text-right">1x</p>
@@ -28,7 +28,7 @@ export default function MarketPrice() {
         </div>
         <div className="flex flex-wrap mx-[-7px]">
           <div className="w-3/4 px-[7px] mb-[5px]">
-            <p className="text-[10px] leading-[15px] text-black_600">Funding rate</p>
+            <p className="text-[12px] leading-[16px] text-black_600">Funding rate</p>
           </div>
           <div className="w-1/4 px-[7px] mb-[5px]">
             <p className="text-[10px] leading-[15px] text-white text-right">1x</p>
@@ -36,7 +36,7 @@ export default function MarketPrice() {
         </div>
         <div className="flex flex-wrap mx-[-7px]">
           <div className="w-3/4 px-[7px] mb-[5px]">
-            <p className="text-[10px] leading-[15px] text-black_600">Minimum position size:</p>
+            <p className="text-[12px] leading-[16px] text-black_600">Minimum position size:</p>
           </div>
           <div className="w-1/4 px-[7px] mb-[5px]">
             <p className="text-[10px] leading-[15px] text-white text-right">100.04%</p>
@@ -44,7 +44,7 @@ export default function MarketPrice() {
         </div>
         <div className="flex flex-wrap mx-[-7px]">
           <div className="w-3/4 px-[7px]">
-            <p className="text-[10px] leading-[15px] text-black_600">Maximum position size</p>
+            <p className="text-[12px] leading-[16px] text-black_600">Maximum position size</p>
           </div>
           <div className="w-1/4 px-[7px]">
             <p className="text-[10px] leading-[15px] text-white text-right">3%</p>

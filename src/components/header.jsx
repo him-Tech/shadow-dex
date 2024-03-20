@@ -49,7 +49,9 @@ export default function Header() {
         <ul className="flex mx-[-3px] justify-end items-center">
           <li className="px-[3px] mr-auto">
             <div className="xl:w-[326px] w-[90px]">
-              <Image src={LogoImg} alt="Logo" className="xl:w-[100px] h-full w-full object-contain mx-auto"/>
+              <Link href={"#"} as={"/"} className="cursor-pointer">
+                <Image src={LogoImg} alt="Logo" className="xl:w-[100px] h-full w-full object-contain mx-auto"/>
+              </Link>
             </div>
           </li>
           <li className="px-[3px]">
@@ -84,7 +86,9 @@ export default function Header() {
       </div>
       <div className="flex">
         <div className="xl:w-[326px] px-[15px] w-[130px] hidden md:block">
-          <Image src={LogoImg} alt="Logo" className="xl:w-[100px] h-full w-full object-contain mx-auto"/>
+          <Link href={"#"} as={"/"} className="cursor-pointer">
+            <Image src={LogoImg} alt="Logo" className="xl:w-[100px] h-full w-full object-contain mx-auto"/>
+          </Link>
         </div>
         <div className="flex items-center xl:w-[calc(100%_-_326px)] md:w-[calc(100%_-_130px)] w-full md:pl-[0] pl-[15px]">
           <div className="mr-auto">

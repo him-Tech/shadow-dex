@@ -25,7 +25,7 @@ export default function BuyTab() {
   const disabled = true;
   
   return(
-    <div className="px-[15px] pb-[20px]" >
+    <div className="px-[15px] pb-[15px]" >
       <div className="flex flex-wrap mx-[-7px]">
         <div className="w-3/5 px-[7px]">
           <p className="text-[10px] leading-[12px] text-[#888888]">Price</p>
@@ -50,28 +50,28 @@ export default function BuyTab() {
       </div>
       <div className="flex flex-wrap mx-[-7px]">
         <div className="w-1/2 px-[7px] mt-[14px]">
-          <p className="text-[10px] leading-[12px] text-[#888888]">Amount</p>
-          <InputNumber postfix="BTC" />
+          {/* <p className="text-[10px] leading-[12px] text-[#888888]">Amount</p> */}
+          <InputNumber postfix="BTC"  placeholder="Amount" />
         </div>
         <div className="w-1/2 px-[7px] mt-[14px]">
-          <p className="text-[10px] leading-[12px] text-[#888888]">Amount</p>
-          <InputNumber postfix="USD" />
+          {/* <p className="text-[10px] leading-[12px] text-[#888888]">Amount</p> */}
+          <InputNumber postfix="USD"  placeholder="Amount" />
         </div>
       </div>
-      <div className="my-[20px]">
+      <div className="mt-[20px] mb-[14px]">
         <Slider
           progress
           defaultValue={50}
-          min={25}
-          step={25}
+          min={0}
+          step={1}
           max={100}
           graduated
-          renderMark={mark => {
-            if ([25, 50, 75, 100].includes(mark)) {
-              return <span>{mark}%</span>;
-            }
-            return null;
-          }}
+          // renderMark={mark => {
+          //   if ([25, 50, 75, 100].includes(mark)) {
+          //     return <span>{mark}%</span>;
+          //   }
+          //   return null;
+          // }}
           className="rs-slider-progress-custom pl-[12px]"
         />
       </div>
@@ -100,9 +100,9 @@ export default function BuyTab() {
         <div className="px-[6px] mt-[10px] flex-grow">
           <Button className={`rs-btn-custom w-full ${disabled && 'disabled'}`} color="green" appearance="primary">Buy</Button>
         </div>
-        <div className="px-[6px] mt-[10px] w-[80px]">
+        <div className="px-[6px] mt-[10px] w-[50px]">
           <Button color="red" appearance="primary" className="rs-btn-custom w-full">
-            <ExchangeIcon width={26} height={20} color={'#000000'} />
+            <ExchangeIcon width={14} height={10} color={'#000000'} />
           </Button>
         </div>
       </div>

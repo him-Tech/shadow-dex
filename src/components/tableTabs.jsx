@@ -1,22 +1,23 @@
 import { MarketTraderTableList } from "@/shared/Helper";
+import SimpleBar from "simplebar-react";
 
 export default function TableTabs() {
   const tableTabsAPI = MarketTraderTableList;
   return (
-    <div className="overflow-x-auto">
+    <SimpleBar style={{ maxHeight: 290 }} forceVisible={true} autoHide={false}>
       <table table className="table-auto border-collapse w-full min-w-[830px]">
         <thead>
           <tr>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-left">Market</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-left">Side</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Position Size</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Notional Size</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Est. liquidation price</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Mark price</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Mark price</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Avg open price</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap text-right">Break-even price</th>
-            <th className="border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal p-[8px] whitespace-nowrap"></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-left"><button type="button">Market</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-left"><button type="button">Side</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Position Size</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Notional Size</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Est. liquidation price</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Avg open price</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Break-even price</button></th>
+            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap"></th>
           </tr>
         </thead>
         <tbody>
@@ -33,13 +34,13 @@ export default function TableTabs() {
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.AvgOpenPrice}</td>
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.BreakEvenPrice}</td>
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">
-                  <p className="rounded-[2px] bg-[#3A1621] py-[6px] px-[11px] text-[#883448] text-[10px] leading-[10px] font-medium inline-block">{tableTabs.Status}</p>
+                  <button type="button" className="rounded-[2px] bg-[#3A1621] py-[6px] px-[11px] text-[#883448] text-[10px] leading-[10px] font-medium inline-block">{tableTabs.Status}</button>
                 </td>
               </tr>
             ))
           }
         </tbody>
       </table>
-    </div>
+    </SimpleBar>
   )
 }

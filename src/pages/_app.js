@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import 'rsuite/dist/rsuite-no-reset.min.css';
+import 'simplebar-react/dist/simplebar.min.css';
 import { Poppins } from "next/font/google";
 import Head from "next/head";
 

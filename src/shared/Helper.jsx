@@ -63,6 +63,21 @@ export const MarketTradersList = [
     "price": "64.897",
     "size": "0.0070",
     "time": "14:44:17"
+  },
+  {
+    "price": "64.897",
+    "size": "0.0070",
+    "time": "14:44:17"
+  },
+  {
+    "price": "64.897",
+    "size": "0.0070",
+    "time": "14:44:17"
+  },
+  {
+    "price": "64.897",
+    "size": "0.0070",
+    "time": "14:44:17"
   }
 ]
 
@@ -530,7 +545,7 @@ export const StockTraderTableList = [
     "Volume": "3.52",
   },
   {
-    "Market": "TSLA/USD",
+    "Market": "TSLA/SUS",
     "Price": "1,086.50",
     "DailyChange": "0.14%",
     "Volume": "3.52",
