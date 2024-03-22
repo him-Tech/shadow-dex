@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ReactSelect from "react-select";
 import Link from "next/link";
-import { Tabs } from "rsuite";
+import { Button, Tabs } from "rsuite";
 import { AddIcon, ArrowThreeDotsIcon, ExchangeIcon, SettingYellowIcon, SideBarCloseIcon, SideBarOpenIcon, StarIcon } from "@/shared/icon";
 import BuyTab from "@/components/buyTab";
 import SellTab from "@/components/sellTab";
@@ -19,6 +19,7 @@ export default function Home() {
   const[starFill, setStarFill] = useState(true);
   const ref = useRef(null);
   const [isHeight, setIsHeight] = useState();
+  const [activeKey, setActiveKey] = useState('buy-btc-perp');
 
   const LanguageOption = [
     {
@@ -65,6 +66,12 @@ export default function Home() {
       setIsFloatingList(false);
     }
   };
+
+  function handleChangeBuySellTabs (key) {
+    setActiveKey(key);
+  }
+
+  
 
   return (
     
@@ -207,12 +214,12 @@ export default function Home() {
                   </div>
                   <div className="md:w-1/2 w-full px-[7px] mt-[14px]">
                     <div className="bg-black_100 rounded-[6px] h-full">
-                      <Tabs defaultActiveKey="1" appearance="subtle" className="w-2row buy-sell-tabs">
-                        <Tabs.Tab eventKey="1" title="Buy BTC-PERP">
-                          <BuyTab />
+                      <Tabs activeKey={activeKey} onSelect={setActiveKey} defaultActiveKey="1" appearance="subtle" className="w-2row buy-sell-tabs">
+                        <Tabs.Tab eventKey="buy-btc-perp" title="Buy BTC-PERP">
+                          <BuyTab handleChangeBuySellTabs={handleChangeBuySellTabs} />
                         </Tabs.Tab>
-                        <Tabs.Tab eventKey="2" title="Sell BTC-PERP">
-                          <SellTab />
+                        <Tabs.Tab eventKey="sell-btc-perp" title="Sell BTC-PERP">
+                          <SellTab handleChangeBuySellTabs={handleChangeBuySellTabs} />
                         </Tabs.Tab>
                       </Tabs>
                     </div>

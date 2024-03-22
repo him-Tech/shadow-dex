@@ -1,8 +1,8 @@
 import { ExchangeIcon } from "@/shared/icon";
 import { useState } from "react";
-import { Button, Form, InputNumber, SelectPicker, Slider, Toggle } from "rsuite";
+import { Button, InputNumber, SelectPicker, Slider, Toggle } from "rsuite";
 
-export default function SellTab() {
+export default function SellTab({handleChangeBuySellTabs}) {
   const options = [
     {
       name: 'Limit order',
@@ -89,7 +89,7 @@ export default function SellTab() {
       </ul>
       <div className="flex mx-[-6px]">
         <div className="px-[6px] mt-[10px] w-[50px]">
-          <Button color="green" appearance="primary" className="rs-btn-custom w-full">
+          <Button color="green" appearance="primary" className="rs-btn-custom w-full" onClick={() => handleChangeBuySellTabs('buy-btc-perp')}>
             <ExchangeIcon width={14} height={10} color={'#000000'} />
           </Button>
         </div>
