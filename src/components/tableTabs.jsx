@@ -6,18 +6,18 @@ export default function TableTabs() {
   return (
     <SimpleBar style={{ height: 290 }} forceVisible={true} autoHide={false}>
       <table table className="table-auto border-collapse w-full min-w-[830px]">
-        <thead>
+        <thead className="sticky top-[-2px] z-[1]">
           <tr>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-left"><button type="button">Market</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-left"><button type="button">Side</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Position Size</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Notional Size</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Est. liquidation price</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Avg open price</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Break-even price</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap"></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-left"><button type="button">Market</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-left"><button type="button">Side</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Position Size</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Notional Size</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Est. liquidation price</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Avg open price</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Break-even price</button></th>
+            <th className="sticky top-[-2px] z-[1] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap"></th>
           </tr>
         </thead>
         <tbody>

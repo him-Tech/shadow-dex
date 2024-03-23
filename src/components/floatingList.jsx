@@ -63,11 +63,11 @@ export default function FloatingListLeft() {
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="bg-black_400 sticky top-0"></th>
-                  <th className="bg-black_400 sticky top-0 text-[10px] text-gray_400 leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap">Market</th>
-                  <th className={`bg-black_400 sticky top-0 text-[10px] text-gray_400 leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap`}><Link href={"#"}>Price</Link></th>
-                  <th className={`bg-black_400 sticky top-0 text-[10px] text-gray_400 leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap`}><Link href={"#"}>Daily change</Link></th>
-                  <th className={`bg-black_400 sticky top-0 text-[10px] ${filterActive ? 'text-white' : 'text-gray_400'} leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap text-right`}><Link href={"#"} onClick={() => {setFilterActive(!filterActive)}}>24h volume</Link></th>
+                  <th className="bg-black_400 sticky top-[-2px] right-[2px]"></th>
+                  <th className="bg-black_400 sticky top-[-2px] right-[2px] text-[10px] text-gray_400 leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap">Market</th>
+                  <th className={`bg-black_400 sticky top-[-2px] right-[2px] text-[10px] text-gray_400 leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap`}><Link href={"#"}>Price</Link></th>
+                  <th className={`bg-black_400 sticky top-[-2px] right-[2px] text-[10px] text-gray_400 leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap`}><Link href={"#"}>Daily change</Link></th>
+                  <th className={`bg-black_400 sticky top-[-2px] right-[2px] text-[10px] ${filterActive ? 'text-white' : 'text-gray_400'} leading-[11px] font-normal px-[5px] py-[8px] whitespace-nowrap text-right`}><Link href={"#"} onClick={() => {setFilterActive(!filterActive)}}>24h volume</Link></th>
                 </tr>
               </thead>
               <tbody>

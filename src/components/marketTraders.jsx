@@ -10,9 +10,9 @@ export default function MarketTraders() {
         <table table className="table-auto border-collapse w-full">
           <thead>
             <tr>
-              <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[0] p-[8px] whitespace-nowrap">Price (USD)</th>
-              <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[0] p-[8px] whitespace-nowrap">Size (BTC)</th>
-              <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[0] p-[8px] whitespace-nowrap">Time</th>
+              <th className="sticky top-[-2px] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[0] p-[8px] whitespace-nowrap">Price (USD)</th>
+              <th className="sticky top-[-2px] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[0] p-[8px] whitespace-nowrap">Size (BTC)</th>
+              <th className="sticky top-[-2px] bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[0] p-[8px] whitespace-nowrap">Time</th>
             </tr>
           </thead>
           <tbody>
