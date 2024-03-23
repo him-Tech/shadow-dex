@@ -23,6 +23,7 @@ export default function Home() {
   const ref = useRef(null);
   const [isHeight, setIsHeight] = useState();
   const [activeKey, setActiveKey] = useState('buy-btc-perp');
+  const [inputValue, setInputValue] = useState(12547);
 
   const LanguageOption = [
     {
@@ -72,6 +73,10 @@ export default function Home() {
 
   function handleChangeBuySellTabs (key) {
     setActiveKey(key);
+  }
+
+  function handleChangeInput (value) {
+    setInputValue(value);
   }
 
   
@@ -219,10 +224,10 @@ export default function Home() {
                     <div className="bg-black_100 rounded-[6px] h-full">
                       <Tabs activeKey={activeKey} onSelect={setActiveKey} defaultActiveKey="1" appearance="subtle" className="w-2row buy-sell-tabs">
                         <Tabs.Tab eventKey="buy-btc-perp" title="Buy BTC-PERP">
-                          <BuyTab handleChangeBuySellTabs={handleChangeBuySellTabs} />
+                          <BuyTab handleChangeBuySellTabs={handleChangeBuySellTabs} inputValue={inputValue} handleChangeInput={handleChangeInput}  />
                         </Tabs.Tab>
                         <Tabs.Tab eventKey="sell-btc-perp" title="Sell BTC-PERP">
-                          <SellTab handleChangeBuySellTabs={handleChangeBuySellTabs} />
+                          <SellTab handleChangeBuySellTabs={handleChangeBuySellTabs} inputValue={inputValue} handleChangeInput={handleChangeInput} />
                         </Tabs.Tab>
                       </Tabs>
                     </div>

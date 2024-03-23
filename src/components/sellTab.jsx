@@ -2,7 +2,7 @@ import { ExchangeIcon } from "@/shared/icon";
 import { useState } from "react";
 import { Button, InputNumber, SelectPicker, Slider, Toggle } from "rsuite";
 
-export default function SellTab({handleChangeBuySellTabs}) {
+export default function SellTab({handleChangeBuySellTabs, handleChangeInput, inputValue}) {
   const options = [
     {
       name: 'Limit order',
@@ -29,7 +29,7 @@ export default function SellTab({handleChangeBuySellTabs}) {
       <div className="flex flex-wrap mx-[-7px]">
         <div className="w-3/5 px-[7px]">
           <p className="text-[10px] leading-[12px] text-[#888888]">Price</p>
-          <InputNumber postfix="RMB" />
+          <InputNumber postfix="RMB" value={inputValue} onChange={(e) => handleChangeInput(e)} />
         </div>
         <div className="w-2/5 px-[7px]">
           <p className="text-[10px] leading-[12px] text-[#888888]">Order type</p>
