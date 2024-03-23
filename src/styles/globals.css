@@ -214,7 +214,7 @@ body {
   align-items: center;  
   justify-content: center;
 }
-.no-border-line.rs-tabs .rs-nav-subtle .rs-nav-item:nth-child(1).rs-nav-item-active:before {
+.no-border-line.rs-tabs .rs-nav-subtle .rs-nav-item:before {
   display: none;
 }
 .no-gap.rs-tabs {
