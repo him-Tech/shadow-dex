@@ -12,6 +12,9 @@ import MarketTraders from "@/components/marketTraders";
 import MaxPositionLeverage from "@/components/maxPositionLeverage";
 import TableTabs from "@/components/tableTabs";
 import SimpleBar from "simplebar-react";
+import TableTabsOpenOrders from "@/components/tableOpenOrders";
+import TableTriggerOrders from "@/components/tableTriggerOrders";
+import TableTradeHistory from "@/components/tableTradeHistory";
 
 export default function Home() {
   const [isWidth, setIsWidth] = useState();
@@ -243,16 +246,16 @@ export default function Home() {
                       <TableTabs />
                     </Tabs.Tab>
                     <Tabs.Tab eventKey="2" title="Open Orders (0)">
-                      <TableTabs />
+                      <TableTabsOpenOrders />
                     </Tabs.Tab>
                     <Tabs.Tab eventKey="3" title="Trigger Orders (0)">
-                      <TableTabs />
+                      <TableTriggerOrders />
                     </Tabs.Tab>
                     <Tabs.Tab eventKey="4" title="Order History">
                       <TableTabs />
                     </Tabs.Tab>
                     <Tabs.Tab eventKey="5" title="Trade History">
-                      <TableTabs />
+                      <TableTradeHistory />
                     </Tabs.Tab>
                   </Tabs>
                 </div>

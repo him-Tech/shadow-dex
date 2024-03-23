@@ -1,7 +1,7 @@
 import { MarketTraderTableList } from "@/shared/Helper";
 import SimpleBar from "simplebar-react";
 
-export default function TableTabs() {
+export default function TableTabsOpenOrders() {
   const tableTabsAPI = MarketTraderTableList;
   return (
     <SimpleBar style={{ height: 290 }} forceVisible={true} autoHide={false}>
@@ -13,7 +13,6 @@ export default function TableTabs() {
             <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Position Size</button></th>
             <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Notional Size</button></th>
             <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Est. liquidation price</button></th>
-            <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
             <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Mark price</button></th>
             <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Avg open price</button></th>
             <th className="sticky top-0 bg-black_100 border-b-[1px] border-b-whiteOpacity10 text-[10px] text-gray_500 leading-[12px] font-normal pt-[5px] p-[8px] whitespace-nowrap text-right"><button type="button">Break-even price</button></th>
@@ -29,7 +28,6 @@ export default function TableTabs() {
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.PositionSize}</td>
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.NotionalSize}</td>
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.EstLiquidationPrice}</td>
-                <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.MarkPrice}</td>
                 <td className="text-[10px] text-pink leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.MarkPriceRed}</td>
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.AvgOpenPrice}</td>
                 <td className="text-[10px] text-white leading-[12px] font-normal px-[8px] py-[4px] text-right">{tableTabs.BreakEvenPrice}</td>
